@@ -2,54 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Improved SEO: Added keywords, Open Graph, and Twitter Cards for better social sharing and search visibility -->
     <meta name="description" content="WefPro | Famous Mahabaleshwar Handmade Strawberry Jam. Order on WhatsApp.">
+    <meta name="keywords" content="Mahabaleshwar strawberry jam, handmade jam, organic jam, Indian jam, WefPro products">
+    <meta name="author" content="WefPro">
+    <meta property="og:title" content="WefPro | Premium Mahabaleshwar Strawberry Jam">
+    <meta property="og:description" content="Crafted with a time-honored traditional recipe from Satara. Pure Mahabaleshwar strawberries slow-cooked for a perfect chunky texture.">
+    <meta property="og:image" content="https://yourdomain.com/4.jpg"> <!-- Replace with actual URL -->
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WefPro | Premium Mahabaleshwar Strawberry Jam">
+    <meta name="twitter:description" content="Order authentic handmade strawberry jam from Mahabaleshwar.">
+    <meta name="twitter:image" content="https://yourdomain.com/4.jpg"> <!-- Replace with actual URL -->
     <title>WefPro | Premium Mahabaleshwar Strawberry Jam</title>
     
+    <!-- Performance: Added font-display: swap to prevent FOIT; preconnect for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Performance: Preload critical CSS for better Core Web Vitals -->
+    <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
+    <!-- Performance: DNS prefetch for external links -->
+    <link rel="dns-prefetch" href="https://wa.me">
 </head>
 <body>
+    <!-- Accessibility: Added skip link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="site-header">
+    <!-- Accessibility: Added role="banner" for header landmark -->
+    <header class="site-header" role="banner">
         <a href="#product" class="logo">WefPro.</a>
-        <nav class="mobile-nav">
-            <a href="#product" class="nav-link">Product</a>
+        <!-- SEO/Accessibility: Added aria-current for active nav state -->
+        <nav class="mobile-nav" role="navigation" aria-label="Main navigation">
+            <a href="#product" class="nav-link" aria-current="page">Product</a>
             <a href="#recipe" class="nav-link">Recipe</a>
             <a href="#support" class="nav-link">Support</a>
         </nav>
     </header>
 
-    <main>
+    <!-- SEO: Wrapped main in <main> for semantic structure -->
+    <main id="main-content">
         <!-- SECTION 1: PRODUCT WITH WORKING SLIDER -->
-        <section id="product" class="container section-padding">
+        <!-- SEO/Accessibility: Used <section> with aria-labelledby; improved heading hierarchy -->
+        <section id="product" class="container section-padding" aria-labelledby="product-title">
             <div class="product-grid animate-fade">
                 <div class="gallery-wrapper">
-                    <div class="slider-container">
-                        <!-- Navigation Arrows -->
-                        <button class="slider-arrow prev" onclick="moveSlide(-1)" aria-label="Previous Image">&#10094;</button>
+                    <!-- Performance/Accessibility: Added <picture> for WebP optimization and lazy loading; ARIA for slider -->
+                    <div class="slider-container" role="region" aria-label="Product image gallery" aria-live="polite">
+                        <button class="slider-arrow prev" onclick="moveSlide(-1)" aria-label="Previous image" tabindex="0">&#10094;</button>
                         
                         <div class="main-image-card">
-                            <img src="4.jpg" id="main-view" class="active-img" alt="WefPro Strawberry Jam Jar">
+                            <picture>
+                                <source srcset="4.webp" type="image/webp">
+                                <img src="4.jpg" id="main-view" class="active-img" alt="WefPro Strawberry Jam Jar - Main view of the 350g glass jar with fresh strawberries" loading="lazy">
+                            </picture>
                         </div>
                         
-                        <button class="slider-arrow next" onclick="moveSlide(1)" aria-label="Next Image">&#10095;</button>
+                        <button class="slider-arrow next" onclick="moveSlide(1)" aria-label="Next image" tabindex="0">&#10095;</button>
                     </div>
 
-                    <div class="thumbnail-scroller" id="thumb-strip">
-                        <img src="4.jpg" class="thumb active" onclick="setSlide(0)" alt="Thumbnail 1">
-                        <img src="1.jpg" class="thumb" onclick="setSlide(1)" alt="Thumbnail 2">
-                        <img src="2.jpg" class="thumb" onclick="setSlide(2)" alt="Thumbnail 3">
-                        <img src="3.jpg" class="thumb" onclick="setSlide(3)" alt="Thumbnail 4">
-                        <img src="5.jpg" class="thumb" onclick="setSlide(4)" alt="Thumbnail 5">
-                        <img src="6.jpg" class="thumb" onclick="setSlide(5)" alt="Thumbnail 6">
+                    <!-- Performance/Accessibility: Lazy-loaded thumbnails with descriptive alt texts -->
+                    <div class="thumbnail-scroller" id="thumb-strip" role="tablist" aria-label="Image thumbnails">
+                        <img src="4.webp" class="thumb active" onclick="setSlide(0)" alt="Thumbnail 1: Front view of WefPro Strawberry Jam Jar" loading="lazy" role="tab" aria-selected="true">
+                        <img src="1.webp" class="thumb" onclick="setSlide(1)" alt="Thumbnail 2: Side view of the jam jar" loading="lazy" role="tab">
+                        <img src="2.webp" class="thumb" onclick="setSlide(2)" alt="Thumbnail 3: Close-up of strawberry chunks" loading="lazy" role="tab">
+                        <img src="3.webp" class="thumb" onclick="setSlide(3)" alt="Thumbnail 4: Jar label details" loading="lazy" role="tab">
+                        <img src="5.webp" class="thumb" onclick="setSlide(4)" alt="Thumbnail 5: Packaging box" loading="lazy" role="tab">
+                        <img src="6.webp" class="thumb" onclick="setSlide(5)" alt="Thumbnail 6: Ingredients highlight" loading="lazy" role="tab">
                     </div>
                 </div>
 
                 <div class="product-content">
                     <span class="badge">🍓 74.63% REAL FRUIT CONTENT</span>
-                    <h1 class="title">Famous Mahabaleshwar Handmade Strawberry Jam</h1>
+                    <h1 id="product-title" class="title">Famous Mahabaleshwar Handmade Strawberry Jam</h1>
                     <p class="description">Crafted with a time-honored traditional recipe from Satara. Pure Mahabaleshwar strawberries slow-cooked for a perfect chunky texture.</p>
                     
                     <div class="price-box">
@@ -57,7 +84,8 @@
                         <span class="unit">/ 350g Glass Jar</span>
                     </div>
 
-                    <a href="https://wa.me/919405836623?text=Hi%20WefPro%2C%20I%20want%20to%20order%20the%20Famous%20Mahabaleshwar%20Strawberry%20Jam." class="btn-whatsapp-buy" target="_blank">
+                    <!-- Accessibility: Added aria-label for better screen reader support -->
+                    <a href="https://wa.me/919405836623?text=Hi%20WefPro%2C%20I%20want%20to%20order%20the%20Famous%20Mahabaleshwar%20Strawberry%20Jam." class="btn-whatsapp-buy" target="_blank" aria-label="Order WefPro Strawberry Jam on WhatsApp">
                         Order on WhatsApp
                     </a>
                     
@@ -70,10 +98,11 @@
         </section>
 
         <!-- SECTION 2: THE HERITAGE -->
-        <section id="recipe" class="bg-white section-padding">
-            <div class="container text-center max-800 animate-fade">
+        <!-- SEO/Accessibility: Improved semantic structure with <article> -->
+        <section id="recipe" class="bg-white section-padding" aria-labelledby="recipe-title">
+            <article class="container text-center max-800 animate-fade">
                 <span class="badge-green">THE SECRET RECIPE</span>
-                <h2 class="section-title">Purely Handmade</h2>
+                <h2 id="recipe-title" class="section-title">Purely Handmade</h2>
                 <p>Founded in the lush hills of Mahabaleshwar, WefPro follows a <strong>Shetkari (Farmer-led)</strong> heritage. We prioritize fruit over fillers, ensuring every jar is packed with the vibrant energy of the sun-ripened berries.</p>
                 
                 <div class="nutrition-grid">
@@ -82,22 +111,26 @@
                     <div class="nutri-item"><span>Fruit</span><strong>74.63%</strong></div>
                     <div class="nutri-item"><span>Sodium</span><strong>1.48 mg</strong></div>
                 </div>
-            </div>
+            </article>
         </section>
 
         <!-- SECTION 3: SUPPORT -->
-        <section id="support" class="container section-padding">
+        <!-- SEO/Accessibility: Used <aside> for contact; improved form accessibility -->
+        <section id="support" class="container section-padding" aria-labelledby="support-title">
             <div class="contact-grid animate-fade">
-                <div class="contact-info">
-                    <h3>Contact Our Kitchen</h3>
+                <aside class="contact-info">
+                    <h3 id="support-title">Contact Our Kitchen</h3>
                     <p><strong>Manufacturing Unit:</strong><br>West Field Product, H.No. 116, S.No. 25/2, Danawali Murha, Mahabaleshwar, Satara - 412805</p>
                     <p><strong>Customer Support:</strong><br>+91 9405836623 | cswefpro@gmail.com</p>
                     <p><strong>FSSAI Lic No:</strong> 21525039001364</p>
-                </div>
+                </aside>
                 <div class="contact-form">
                     <h3>Send Feedback</h3>
-                    <form onsubmit="event.preventDefault(); window.open('https://wa.me/919405836623?text=Feedback%3A%20' + encodeURIComponent(this.querySelector('textarea').value));">
-                        <textarea placeholder="How can we improve your experience?" required></textarea>
+                    <!-- Accessibility: Added proper labels and validation -->
+                    <form onsubmit="handleFeedbackSubmit(event)">
+                        <label for="feedback-textarea" class="sr-only">Your feedback message</label>
+                        <textarea id="feedback-textarea" placeholder="How can we improve your experience?" required aria-describedby="feedback-help"></textarea>
+                        <small id="feedback-help" class="sr-only">This will open WhatsApp with your message.</small>
                         <button type="submit" class="btn-secondary">Send Message via WhatsApp</button>
                     </form>
                 </div>
@@ -105,53 +138,37 @@
         </section>
     </main>
 
-    <footer class="site-footer">
+    <!-- SEO/Accessibility: Footer as <footer> landmark -->
+    <footer class="site-footer" role="contentinfo">
         <h2 class="footer-logo">WefPro Authentic</h2>
-        <p>© 2026 West Field Product. All Rights Reserved.</p>
+        <p>&copy; <span id="current-year"></span> West Field Product. All Rights Reserved.</p>
+        <!-- SEO: Added structured data for product -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Famous Mahabaleshwar Handmade Strawberry Jam",
+            "description": "Pure Mahabaleshwar strawberries slow-cooked for a perfect chunky texture.",
+            "brand": "WefPro",
+            "offers": {
+                "@type": "Offer",
+                "price": "350.00",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock"
+            }
+        }
+        </script>
     </footer>
 
     <!-- WHATSAPP FLOATING BUTTON -->
-    <a href="https://wa.me/919405836623" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <!-- Accessibility: Enhanced ARIA and focus -->
+    <a href="https://wa.me/919405836623" class="whatsapp-float" target="_blank" aria-label="Chat with WefPro on WhatsApp" tabindex="0">
         <div class="wa-icon-circle">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.736 5.48 2.016 7.79L0 32l8.441-2.204C10.704 31.184 13.256 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z" fill="#4caf50"/><path d="M23.328 19.177c-.4-.201-2.364-1.166-2.731-1.299-.367-.133-.633-.2-.9.2s-1.033 1.299-1.266 1.565-.467.299-.867.099c-.4-.201-1.689-.623-3.216-1.985-1.188-1.06-1.991-2.37-2.224-2.77s-.025-.616.175-.815c.18-.179.4-.467.6-.7s.267-.467.4-.766.067-.566-.033-.766-.9-2.164-1.233-2.964c-.324-.781-.652-.676-.9-.689-.233-.012-.5-.012-.766-.012s-.7.1-1.066.5-1.4 1.366-1.4 3.328 1.433 3.863 1.633 4.129c.2.266 2.821 4.307 6.833 6.041 2.384 1.032 3.32 1.121 4.515.943 1.041-.156 2.364-.965 2.697-1.898s.333-1.731.233-1.898c-.1-.167-.366-.266-.766-.466z" fill="#fff"/></svg>
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.736 5.48 2.016 7.79L0 32l8.441-2.204C10.704 31.184 13.256 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z" fill="#4caf50"/><path d="M23.328 19.177c-.4-.201-2.364-1.166-2.731-1.299-.367-.133-.633-.2-.9.2s-1.033 1.299-1.266 1.565-.467.299-.867.099c-.4-.201-1.689-.623-3.216-1.985-1.188-1.06-1.991-2.37-2.224-2.77s-.025-.616.175-.815c.18-.179.4-.467.6-.7s.267-.467.4-.766.067-.566-.033-.766-.9-2.164-1.233-2.964c-.324-.781-.652-.676-.9-.689-.233-.012-.5-.012-.766-.012s-.7.1-1.066.5-1.4 1.366-1.4 3.328 1.433 3.863 1.633 4.129c.2.266 2.821 4.307 6.833 6.041 2.384 1.032 3.32 1.121 4.515.943 1.041-.156 2.364-.965 2.697-1.898s.333-1.731.233-1.898c-.1-.167-.366-.266-.766-.466z" fill="#fff"/></svg>
         </div>
     </a>
 
-    <script>
-        // Ensure image paths match your files exactly
-        const images = ["4.jpg", "1.jpg", "2.jpg", "3.jpg", "5.jpg", "6.jpg"];
-        let currentSlide = 0;
-
-        function moveSlide(direction) {
-            currentSlide = (currentSlide + direction + images.length) % images.length;
-            updateUI();
-        }
-
-        function setSlide(index) {
-            currentSlide = index;
-            updateUI();
-        }
-
-        function updateUI() {
-            const mainImg = document.getElementById('main-view');
-            
-            // 1. Remove active state from thumbnails
-            document.querySelectorAll('.thumb').forEach((thumb, idx) => {
-                thumb.classList.toggle('active', idx === currentSlide);
-            });
-
-            // 2. Apply a quick fade transition
-            mainImg.style.opacity = '0.3';
-            
-            setTimeout(() => {
-                mainImg.src = images[currentSlide];
-                mainImg.style.opacity = '1';
-            }, 100);
-            
-            // 3. Scroll thumbnails into view if they overflow
-            const activeThumb = document.querySelectorAll('.thumb')[currentSlide];
-            activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
-    </script>
+    <!-- Performance: Moved JS to external file with defer to avoid render-blocking -->
+    <script src="script.js" defer></script>
 </body>
 </html>
