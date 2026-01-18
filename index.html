@@ -22,24 +22,28 @@
     </header>
 
     <main>
-        <!-- SECTION 1: PRODUCT WITH SLIDER -->
+        <!-- SECTION 1: PRODUCT WITH WORKING SLIDER -->
         <section id="product" class="container section-padding">
             <div class="product-grid animate-fade">
                 <div class="gallery-wrapper">
                     <div class="slider-container">
-                        <button class="slider-arrow prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <!-- Navigation Arrows -->
+                        <button class="slider-arrow prev" onclick="moveSlide(-1)" aria-label="Previous Image">&#10094;</button>
+                        
                         <div class="main-image-card">
-                            <img src="4.jpg" id="main-view" alt="WefPro Strawberry Jam Jar">
+                            <img src="4.jpg" id="main-view" class="active-img" alt="WefPro Strawberry Jam Jar">
                         </div>
-                        <button class="slider-arrow next" onclick="moveSlide(1)">&#10095;</button>
+                        
+                        <button class="slider-arrow next" onclick="moveSlide(1)" aria-label="Next Image">&#10095;</button>
                     </div>
+
                     <div class="thumbnail-scroller" id="thumb-strip">
-                        <img src="4.jpg" class="thumb active" onclick="setSlide(0)">
-                        <img src="1.jpg" class="thumb" onclick="setSlide(1)">
-                        <img src="2.jpg" class="thumb" onclick="setSlide(2)">
-                        <img src="3.jpg" class="thumb" onclick="setSlide(3)">
-                        <img src="5.jpg" class="thumb" onclick="setSlide(4)">
-                        <img src="6.jpg" class="thumb" onclick="setSlide(5)">
+                        <img src="4.jpg" class="thumb active" onclick="setSlide(0)" alt="Thumbnail 1">
+                        <img src="1.jpg" class="thumb" onclick="setSlide(1)" alt="Thumbnail 2">
+                        <img src="2.jpg" class="thumb" onclick="setSlide(2)" alt="Thumbnail 3">
+                        <img src="3.jpg" class="thumb" onclick="setSlide(3)" alt="Thumbnail 4">
+                        <img src="5.jpg" class="thumb" onclick="setSlide(4)" alt="Thumbnail 5">
+                        <img src="6.jpg" class="thumb" onclick="setSlide(5)" alt="Thumbnail 6">
                     </div>
                 </div>
 
@@ -114,32 +118,39 @@
     </a>
 
     <script>
-        let currentSlide = 0;
+        // Ensure image paths match your files exactly
         const images = ["4.jpg", "1.jpg", "2.jpg", "3.jpg", "5.jpg", "6.jpg"];
+        let currentSlide = 0;
 
         function moveSlide(direction) {
             currentSlide = (currentSlide + direction + images.length) % images.length;
-            updateGallery();
+            updateUI();
         }
 
         function setSlide(index) {
             currentSlide = index;
-            updateGallery();
+            updateUI();
         }
 
-        function updateGallery() {
+        function updateUI() {
             const mainImg = document.getElementById('main-view');
-            mainImg.style.opacity = 0; // Fade out
+            
+            // 1. Remove active state from thumbnails
+            document.querySelectorAll('.thumb').forEach((thumb, idx) => {
+                thumb.classList.toggle('active', idx === currentSlide);
+            });
+
+            // 2. Apply a quick fade transition
+            mainImg.style.opacity = '0.3';
             
             setTimeout(() => {
                 mainImg.src = images[currentSlide];
-                mainImg.style.opacity = 1; // Fade in
-            }, 150);
-
-            const thumbs = document.querySelectorAll('.thumb');
-            thumbs.forEach((t, i) => {
-                t.classList.toggle('active', i === currentSlide);
-            });
+                mainImg.style.opacity = '1';
+            }, 100);
+            
+            // 3. Scroll thumbnails into view if they overflow
+            const activeThumb = document.querySelectorAll('.thumb')[currentSlide];
+            activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         }
     </script>
 </body>
