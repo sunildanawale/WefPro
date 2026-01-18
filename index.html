@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="WefPro | Famous Mahabaleshwar Handmade Strawberry Jam. 74.63% Real Fruit. Order on WhatsApp.">
+    <title>WefPro | Premium Mahabaleshwar Strawberry Jam</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="#product" class="logo">WefPro.</a>
+        <nav class="mobile-nav">
+            <a href="#product" class="nav-link">Product</a>
+            <a href="#recipe" class="nav-link">Recipe</a>
+            <a href="#support" class="nav-link">Support</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION 1: PRODUCT -->
+        <section id="product" class="container section-padding">
+            <div class="product-grid">
+                <div class="gallery-wrapper">
+                    <div class="main-image-card">
+                        <img src="4.jpg" id="main-view" alt="WefPro Strawberry Jam Jar">
+                    </div>
+                    <div class="thumbnail-scroller">
+                        <img src="4.jpg" class="thumb active" onclick="swap(this)">
+                        <img src="1.jpg" class="thumb" onclick="swap(this)">
+                        <img src="2.jpg" class="thumb" onclick="swap(this)">
+                        <img src="3.jpg" class="thumb" onclick="swap(this)">
+                        <img src="5.jpg" class="thumb" onclick="swap(this)">
+                        <img src="6.jpg" class="thumb" onclick="swap(this)">
+                    </div>
+                </div>
+
+                <div class="product-content">
+                    <span class="badge">🍓 74.63% REAL FRUIT</span>
+                    <h1 class="title">Famous Mahabaleshwar Handmade Strawberry Jam</h1>
+                    <p class="description">Crafted with a time-honored traditional recipe from Satara. Experience the authentic, chunky texture of fresh-picked strawberries.</p>
+                    
+                    <div class="price-box">
+                        <span class="price">₹350.00</span>
+                        <span class="unit">/ 350g Glass Jar</span>
+                    </div>
+
+                    <!-- WHATSAPP PURCHASE BUTTON -->
+                    <a href="https://wa.me/919405836623?text=Hi%20WefPro%2C%20I%20want%20to%20order%20the%20Famous%20Mahabaleshwar%20Strawberry%20Jam." class="btn-whatsapp-buy" target="_blank">
+                        Order on WhatsApp
+                    </a>
+                    
+                    <div class="trust-icons">
+                        <span>✅ Chemical Free</span>
+                        <span>✅ Small Batch</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: RECIPE -->
+        <section id="recipe" class="bg-white section-padding">
+            <div class="container text-center max-800">
+                <span class="badge-green">OUR HERITAGE</span>
+                <h2 class="section-title">The Handmade Secret</h2>
+                <p>Founded in the hills of Mahabaleshwar, WefPro uses a <strong>Farmer-led (Shetkari)</strong> process. 74.63% of every jar is pure fruit, slow-cooked to preserve natural flavor.</p>
+                
+                <div class="nutrition-grid">
+                    <div class="nutri-item"><span>Energy</span><strong>287.57 kcal</strong></div>
+                    <div class="nutri-item"><span>Sugars</span><strong>46.81 g</strong></div>
+                    <div class="nutri-item"><span>Fruit</span><strong>74.63 %</strong></div>
+                    <div class="nutri-item"><span>Sodium</span><strong>1.48 mg</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SUPPORT -->
+        <section id="support" class="container section-padding">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Our Kitchen</h3>
+                    <p><strong>Unit:</strong> West Field Product, Danawali, Satara - 412805</p>
+                    <p><strong>Support:</strong> +91 9405836623</p>
+                    <p><strong>FSSAI:</strong> 21525039001364</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Feedback</h3>
+                    <form onsubmit="event.preventDefault(); window.open('https://wa.me/919405836623?text=Feedback%3A%20' + encodeURIComponent(this.querySelector('textarea').value));">
+                        <textarea placeholder="Tell us how you liked our jam..." required></textarea>
+                        <button type="submit" class="btn-secondary">Send via WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <h2 class="footer-logo">WefPro Authentic</h2>
+        <p>© 2026 West Field Product. All Rights Reserved.</p>
+    </footer>
+
+    <!-- FIXED WHATSAPP FLOATING BUTTON (Placed at the end) -->
+    <a href="https://wa.me/919405836623" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+        <span class="float-text">Chat with us</span>
+        <div class="wa-icon-circle">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.736 5.48 2.016 7.79L0 32l8.441-2.204C10.704 31.184 13.256 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z" fill="#4caf50"/><path d="M23.328 19.177c-.4-.201-2.364-1.166-2.731-1.299-.367-.133-.633-.2-.9.2s-1.033 1.299-1.266 1.565-.467.299-.867.099c-.4-.201-1.689-.623-3.216-1.985-1.188-1.06-1.991-2.37-2.224-2.77s-.025-.616.175-.815c.18-.179.4-.467.6-.7s.267-.467.4-.766.067-.566-.033-.766-.9-2.164-1.233-2.964c-.324-.781-.652-.676-.9-.689-.233-.012-.5-.012-.766-.012s-.7.1-1.066.5-1.4 1.366-1.4 3.328 1.433 3.863 1.633 4.129c.2.266 2.821 4.307 6.833 6.041 2.384 1.032 3.32 1.121 4.515.943 1.041-.156 2.364-.965 2.697-1.898s.333-1.731.233-1.898c-.1-.167-.366-.266-.766-.466z" fill="#fff"/></svg>
+        </div>
+    </a>
+
+    <script>
+        function swap(el) {
+            document.getElementById('main-view').src = el.src;
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+        }
+    </script>
+</body>
+</html>
